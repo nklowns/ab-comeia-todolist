@@ -1,4 +1,4 @@
-﻿# Introdurção
+﻿# Introdução
 Aplicação desenvolvida em cima da ASP.NET Core 6 utilizando seu tema padrão do bootstrap5.
 
 ### Build and run com Docker
