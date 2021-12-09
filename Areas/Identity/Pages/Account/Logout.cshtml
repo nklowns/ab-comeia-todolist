@@ -1,0 +1,28 @@
+﻿@page
+@model LogoutModel
+@{
+    ViewData["Title"] = "Log out";
+}
+
+@{
+    if (User.Identity!.IsAuthenticated)
+    {
+        <section class="container">
+            <div class="row">
+                <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
+                    <div class="card border-0 shadow rounded-3 my-5 overflow-hidden">
+                        <div class="card-body p-4 p-sm-5">
+                            <h1 class="card-title text-center mb-5 fw-light fs-5">Log Out</h1>
+                            <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Page("/", new {area = ""})" method="post">
+                                <div class="d-grid">
+                                    <button type="submit" class="nav-link text-center btn btn-link text-dark">Click here to Logout</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    }
+    else Response.Redirect("~/index");
+}

@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>aspnet-ab_comeia_todolist-815FD4F9-9533-4F59-820F-0024D14A1A11</UserSecretsId>
+    <RootNamespace>ab_comeia_todolist</RootNamespace>
+    <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Update="app.db" CopyToOutputDirectory="PreserveNewest" ExcludeFromSingleFile="true" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="6.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="6.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Views\Todo\Delete.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Todo\Details.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Todo\Edit.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Todo\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Todo\Create.cshtml" />
+    <_ContentIncludedByDefault Remove="Pages\Components\TodoController\Index.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Shared\Todo\CreatePartial.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Shared\Todo\IndexPartial.cshtml" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,78 @@
+@model ab_comeia_todolist.Models.Todo
+
+@{
+    ViewData["Title"] = "Remover";
+}
+
+<section class="container pt-5">
+    <div class="row">
+        <div class="text-center">
+            <h1 class="display-4">StarPound</h1>
+        </div>
+
+        <div class="card border-0 shadow mx-auto mt-5">
+            <div class="card-header bg-transparent py-4 d-flex justify-content-between">
+                <h2 class="h5 fw-light">Remover To-Do</h2>
+                <span class="h5 fw-light"><i class="fa fa-star-and-crescent"></i> <small>@Model.Tagname</small></span>
+            </div>
+            
+           
+
+            <dl class="card-body">
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Tagname)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Tagname)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Description)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Description)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.UpTo)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.UpTo)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Done)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Done)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.CreatedAt)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.CreatedAt)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.LastUpdateDate)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.LastUpdateDate)
+                </dd>
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.User)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.User)
+                </dd>
+            </dl>
+            <div class="card-footer bg-transparent py-4">
+                <div class="d-flex justify-content-between">
+                    <a class="btn btn-link text-dark text-decoration-none" asp-action="Index"><i class="fa fa-arrow-left"></i> Voltar para Lista</a>
+                    <form asp-action="Delete">
+                        <input type="hidden" asp-for="Id"/>
+                        <button type="submit" class="btn btn-danger">
+                            <i class="fa fa-trash"></i> Deletar
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

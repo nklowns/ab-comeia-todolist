@@ -1,0 +1,62 @@
+@model ab_comeia_todolist.Models.Todo
+
+@{
+    ViewData["Title"] = "Editar";
+}
+
+<section class="container pt-5">
+    <div class="row">
+        <div class="text-center">
+            <h1 class="display-4">StarPound</h1>
+        </div>
+        
+        <div class="card border-0 shadow mx-auto mt-5">
+            <div class="card-header bg-transparent py-4 d-flex justify-content-between">
+                <h2 class="h5 fw-light">Editar To-Do</h2>
+                <span class="h5 fw-light"><i class="fa fa-star-and-crescent"></i> <small>@Model.Tagname</small></span>
+            </div>
+            <form asp-action="Edit">
+                <div class="card-body">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="Id"/>
+                    <div class="form-group">
+                        <label asp-for="Tagname" class="control-label"></label>
+                        <input asp-for="Tagname" class="form-control"/>
+                        <span asp-validation-for="Tagname" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Description" class="control-label"></label>
+                        <input asp-for="Description" class="form-control"/>
+                        <span asp-validation-for="Description" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="UpTo" class="control-label"></label>
+                        <input asp-for="UpTo" class="form-control"/>
+                        <span asp-validation-for="UpTo" class="text-danger"></span>
+                    </div>
+                    <div class="form-group form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" asp-for="Done"/> @Html.DisplayNameFor(model => model.Done)
+                        </label>
+                    </div>
+
+                    <span asp-validation-for="CreatedAt" class="text-danger visually-hidden"></span>
+                    <span asp-validation-for="LastUpdateDate" class="text-danger visually-hidden"></span>
+                    <span asp-validation-for="User" class="text-danger visually-hidden"></span>
+                    <input type="hidden" asp-for="User" value="@User.Identity!.Name"/>
+
+                </div>
+                <div class="form-group card-footer bg-transparent py-4">
+                    <div class="d-flex justify-content-between">
+                        <a class="btn btn-link text-dark text-decoration-none" asp-action="Index"><i class="fa fa-arrow-left"></i> Voltar para Lista</a>
+                        <input type="submit" value="Salvar Alterações" class="btn btn-primary"/>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
